@@ -3,6 +3,7 @@ import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
 import { PropsWithChildren } from 'react';
 import 'styles/main.css';
+import { NextThemeProvider } from "@/components/ThemeProvider"
 
 const meta = {
   title: 'Next.js Subscription Starter',
@@ -45,18 +46,26 @@ export default function RootLayout({
   children
 }: PropsWithChildren) {
   return (
-    <html lang="en">
-      <body className="bg-black loading">
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-white dark:bg-zinc-900 loading">
         <SupabaseProvider>
-          {/* @ts-expect-error */}
-          <Navbar />
-          <main
-            id="skip"
-            className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+          <NextThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
           >
-            {children}
-          </main>
-          <Footer />
+
+            {/* @ts-ignore */}
+            <Navbar />
+            <main
+              id="skip"
+              className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+            >
+              {children}
+            </main>
+            <Footer />
+          </NextThemeProvider>
         </SupabaseProvider>
       </body>
     </html>

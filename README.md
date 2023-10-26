@@ -2,6 +2,14 @@
 
 The all-in-one starter kit for high-performance SaaS applications.
 
+I loved the template provided by Vercel, so I built on it and added the following:
+
+- Dark Mode
+- Proper Landing Page
+- Better Support for One-Time-Payments
+  - Subscriptions still work, just choose the Product-Type in your Stripe Dashboard when creating a product
+- and some other minor changes
+
 ## Features
 
 - Secure user management and authentication with [Supabase](https://supabase.io/docs/guides/auth)
@@ -9,9 +17,12 @@ The all-in-one starter kit for high-performance SaaS applications.
 - Integration with [Stripe Checkout](https://stripe.com/docs/payments/checkout) and the [Stripe customer portal](https://stripe.com/docs/billing/subscriptions/customer-portal)
 - Automatic syncing of pricing plans and subscription statuses via [Stripe webhooks](https://stripe.com/docs/webhooks)
 
-## Demo
+## Demos
 
 - https://subscription-payments.vercel.app/
+- https://alertbun.com/
+- https://limegigs.com/
+- https://deepvalue.com/
 
 [![Screenshot of demo](./public/demo.png)](https://subscription-payments.vercel.app/)
 
